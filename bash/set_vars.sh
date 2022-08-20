@@ -14,5 +14,3 @@ PGID=${PGID}
 EOF
 
 bash fn_var.sh
-
-setfacl -m "u:root:rw" /home/"${SUDO_USER:-$USER}"/docker/.env

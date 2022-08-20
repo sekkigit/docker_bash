@@ -2,7 +2,7 @@
 
 source /home/"${SUDO_USER:-$USER}"/docker/.var
 
-cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker-compose.yml
+cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/docker-compose.yml
 version: '3'
 
 services:
