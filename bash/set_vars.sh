@@ -1,7 +1,5 @@
 #!/bin/bash
 
-touch /home/"${SUDO_USER:-$USER}"/docker/.env
-
 USER=${SUDO_USER:-$USER}
 PUID=$(id -u "${SUDO_USER:-$USER}")
 PGID=$(id -g "${SUDO_USER:-$USER}")
