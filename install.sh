@@ -9,7 +9,8 @@ while true; do
         read -r -p "Do you wish to run this scrict for Docker setup?
 Yes | No --> " yn
         case $yn in
-            [Yy]* ) echo "Let's start the setup.";
+            [Yy]* ) echo;
+                    echo "Let's start the setup.";
                     echo "$SPLIT";
                     fn_install;;
             [Nn]* ) fn_bye;;
