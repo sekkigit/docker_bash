@@ -24,6 +24,7 @@ while true; do
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash ./bash/docker_install.sh &> /dev/null;
+                    echo;
                     echo "Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.";
                     echo "$SPLIT";
                     sleep 2s;
@@ -39,6 +40,7 @@ while true; do
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash ./bash/set_vars.sh;
+                    echo;
                     echo "Created docker .env";
                     echo "$SPLIT";
                     fn_network;;
@@ -56,6 +58,7 @@ Yes | No --> " yn
                     read DOCNET;
                     docker network create "$DOCNET";
                     echo "DOCNET=$DOCNET" >> /home/"${SUDO_USER:-$USER}"/docker/.env;
+                    echo;
                     echo "Created docker network";
                     echo "$SPLIT";
                     fn_compose;;
@@ -91,6 +94,10 @@ Yes | No --> " yn
           esac
 done }
 
-fn_bye() { echo "Exiting setup"; exit 0; }
+fn_bye() {
+     echo;
+     echo "Exiting setup";
+     exit 0; 
+}
 
 fn_start
