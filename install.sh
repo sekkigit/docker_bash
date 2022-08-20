@@ -58,6 +58,7 @@ Yes | No --> " yn
                     read DOCNET;
                     docker network create "$DOCNET";
                     echo "DOCNET=$DOCNET" >> /home/"${SUDO_USER:-$USER}"/docker/.env;
+                    echo "DOCNET=$DOCNET" >> /home/"${SUDO_USER:-$USER}"/docker/.var;
                     echo;
                     echo "Created docker network";
                     echo "$SPLIT";

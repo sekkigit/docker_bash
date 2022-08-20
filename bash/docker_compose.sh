@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .env
+source /home/"${SUDO_USER:-$USER}"/docker/.var
 
 cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker-compose.yml
 version: '3'
