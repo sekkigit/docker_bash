@@ -2,6 +2,7 @@
 
 SPLIT=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)
 apt update
+clear
 
 fn_start() { echo;
 while true; do
@@ -37,7 +38,7 @@ while true; do
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash ./bash/set_vars.sh;
-                    echo "Created docker network";
+                    echo "Created docker .env";
                     echo "$SPLIT";
                     fn_network;;
             [Nn]* ) fn_network;;
