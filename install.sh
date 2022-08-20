@@ -27,7 +27,6 @@ Yes | No --> " yn
                     echo;
                     echo "Docker is $(systemctl is-enabled docker) and $(systemctl is-active docker). Docker system prune automated.";
                     echo "$SPLIT";
-                    sleep 2s;
                     fn_env;;
             [Nn]* ) fn_env;;
             * ) echo "Please answer yes or no.";;
@@ -89,7 +88,6 @@ Yes | No --> " yn
                     echo "";
                     rm /home/"${SUDO_USER:-$USER}"/docker/.var
                     echo "$SPLIT";
-                    sleep 5s;
                     fn_bye;;
             [Nn]* ) fn_bye;;
             * ) echo "Please answer yes or no.";;
