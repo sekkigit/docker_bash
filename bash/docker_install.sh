@@ -12,4 +12,5 @@ usermod -aG docker,adm "${SUDO_USER:-$USER}"
 cat <<EOF >> /etc/cron.d/crontask
 25 5 * * * root    docker system prune -a -f
 EOF
+
 crontab -u "${SUDO_USER:-$USER}" /etc/cron.d/crontask

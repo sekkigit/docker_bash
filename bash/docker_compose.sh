@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cat <<EOF > docker-compose.yml
+source .env
+
+cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker-compose.yml
 version: '3'
 
 services:
