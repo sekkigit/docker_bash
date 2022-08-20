@@ -87,6 +87,7 @@ Yes | No --> " yn
                     echo "filebrowser......(file managing interface within a specified directory)";
                     echo "cloudflare-ddns..(update dynamic DNS entries for accounts on various DNS providers)";
                     echo "";
+                    rm /home/"${SUDO_USER:-$USER}"/docker/.var
                     echo "$SPLIT";
                     sleep 5s;
                     fn_bye;;
