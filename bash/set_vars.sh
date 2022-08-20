@@ -13,4 +13,4 @@ PGID=${PGID}
 #ADDED
 EOF
 
-bash fn_var.sh
+bash ./fn_var.sh

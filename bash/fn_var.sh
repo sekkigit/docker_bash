@@ -7,10 +7,13 @@ while true; do
         read -r -p "Do you wish to run WebSite?
 Yes | No --> " yn
         case $yn in
-            [Yy]* ) echo "Enter domain name you want to use:";
+            [Yy]* ) echo;
+                    echo "Enter domain name you want to use:";
                     read SITE;
-                    echo "SITE=$SITE" >> .env;
+                    echo "SITE=$SITE" >> /home/"${SUDO_USER:-$USER}"/docker/.env;
+                    echo;
                     echo "Domain name saved";
+                    echo;
                     echo "$SPLIT";
                     fn_tz;;
             [Nn]* ) fn_tz;;
@@ -23,11 +26,14 @@ while true; do
         read -r -p "Do you wish to set Time Zone?
 Yes | No --> " yn
         case $yn in
-            [Yy]* ) echo "Enter Time Zone you want to use:";
+            [Yy]* ) echo;
+                    echo "Enter Time Zone you want to use:";
                     echo "***Countrey/State***";
                     read TIMEZONE;
-                    echo "TIMEZONE=$TIMEZONE" >> .env;
+                    echo "TIMEZONE=$TIMEZONE" >> /home/"${SUDO_USER:-$USER}"/docker/.env;
+                    echo;
                     echo "Time Zone saved";
+                    echo;
                     echo "$SPLIT";
                     fn_api;;
             [Nn]* ) fn_api;;
@@ -40,10 +46,13 @@ while true; do
         read -r -p "Do you wish to use CloudFlare DNS API?
 Yes | No --> " yn
         case $yn in
-            [Yy]* ) echo "Enter API Key you want to use:";
+            [Yy]* ) echo;
+                    echo "Enter API Key you want to use:";
                     read DNSAPI;
-                    echo "DNSAPI=$DNSAPI" >> .env;
+                    echo "DNSAPI=$DNSAPI" >> /home/"${SUDO_USER:-$USER}"/docker/.env;
+                    echo;
                     echo "API Key saved";
+                    echo;
                     echo "$SPLIT";
                     fn_bye;;
             [Nn]* ) fn_bye;;
