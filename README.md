@@ -3,8 +3,8 @@
 
 
 #### This is a Docker setup that can be used with Ubuntu 20.04 and 22.04 LTS.
-This script is intended to quickly set up a Docker environment for testing containers.
-### Run as normal user but apply "sudo" on a bash script.
+#### This script is intended to quickly set up a Docker environment for testing containers.
+#### Run as normal user but apply "sudo" on a bash script.
 
 <p align="right">COPY
 </p>
