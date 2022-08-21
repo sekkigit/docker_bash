@@ -44,6 +44,7 @@ services:
     ports:
       - 26503:3000
     volumes:
+      - ./grafana:/etc/grafana/provisioning/
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
     networks:
