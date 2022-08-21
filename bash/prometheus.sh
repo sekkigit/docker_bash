@@ -32,7 +32,7 @@ EOF
 
 mkdir /home/"${SUDO_USER:-$USER}"/docker/grafana/datasource
 
-cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/datasource/prom.yaml
+cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/datasource/datasource.yml
 # config file version
 apiVersion: 1
 
@@ -53,7 +53,7 @@ datasources:
   # <int> org id. will default to orgId 1 if not specified
   orgId: 1
   # <string> url
-  url: http://192.168.1.49:26504
+  url: http://prometheus:9090
   # <string> database password, if used
   password:
   # <string> database user, if used
