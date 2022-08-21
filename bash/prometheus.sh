@@ -1,5 +1,7 @@
 #!/bin/bash
 
+IP=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+
 cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/prometheus/prometheus.yml
 global:
   scrape_interval:     15s # By default, scrape targets every 15 seconds.
@@ -53,7 +55,7 @@ datasources:
   # <int> org id. will default to orgId 1 if not specified
   orgId: 1
   # <string> url
-  url: http://prometheus:9090
+  url: http://$IP:26504
   # <string> database password, if used
   password:
   # <string> database user, if used
