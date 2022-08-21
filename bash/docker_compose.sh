@@ -39,7 +39,7 @@ services:
       - $DOCNET
 
   grafana:
-    image: grafana/grafana-oss:latest
+    image: grafana/grafana
     container_name: grafana
     ports:
       - 26503:3000
