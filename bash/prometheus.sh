@@ -32,9 +32,9 @@ scrape_configs:
       - targets: ['cadvisor:8080']
 EOF
 
-mkdir /home/"${SUDO_USER:-$USER}"/docker/grafana/datasource
+mkdir /home/"${SUDO_USER:-$USER}"/docker/grafana/datasources
 
-cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/datasource/datasource.yml
+cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/datasources/datasource.yml
 # config file version
 apiVersion: 1
 
