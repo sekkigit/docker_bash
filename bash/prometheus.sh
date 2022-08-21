@@ -17,7 +17,7 @@ scrape_configs:
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:26504']
+      - targets: ['localhost:9090']
 
   # Example job for node_exporter
   - job_name: 'node_exporter'
@@ -53,7 +53,7 @@ datasources:
   # <int> org id. will default to orgId 1 if not specified
   orgId: 1
   # <string> url
-  url: http://prometheus:26504
+  url: http://prometheus:9090
   # <string> database password, if used
   password:
   # <string> database user, if used
