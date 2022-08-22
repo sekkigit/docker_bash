@@ -74,7 +74,7 @@ while true; do
 Yes | No --> " yn
         case $yn in
             [Yy]* ) bash ./bash/prometheus.sh &> /dev/null;
-                    bash ./bash/dashboard.sh &> /dev/null;
+                    bash cp ./json/* /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/ &> /dev/null;
                     bash ./bash/docker_compose.sh
                     echo "$SPLIT";
                     echo "Created docker-comose.yml with:";
