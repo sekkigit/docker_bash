@@ -813,7 +813,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
 }
 EOF
 
-cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node.json
+cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node_exporter.json
 {
   "annotations": {
     "list": [
