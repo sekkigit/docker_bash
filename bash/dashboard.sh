@@ -4,7 +4,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
 {
   "__inputs": [
     {
-      "name": "Prometheus",
+      "name": "DS_PROMETHEUS",
       "label": "Prometheus",
       "description": "Prometheus as the datasource is obligatory",
       "type": "datasource",
@@ -122,7 +122,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{instance=~\"$host\",name=~\"$container\",name=~\".+\"}[5m])) by (name) *100",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}[5m])) by (name) *100",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -149,7 +149,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:606",
+          "\$\$hashKey": "object:606",
           "format": "percent",
           "label": null,
           "logBase": 1,
@@ -158,7 +158,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
           "show": true
         },
         {
-          "$$hashKey": "object:607",
+          "\$\$hashKey": "object:607",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -236,7 +236,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(container_memory_rss{instance=~\"$host\",name=~\"$container\",name=~\".+\"}) by (name)",
+          "expr": "sum(container_memory_rss{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}) by (name)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -263,7 +263,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:606",
+          "\$\$hashKey": "object:606",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -272,7 +272,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
           "show": true
         },
         {
-          "$$hashKey": "object:607",
+          "\$\$hashKey": "object:607",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -336,7 +336,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(container_memory_cache{instance=~\"$host\",name=~\"$container\",name=~\".+\"}) by (name)",
+          "expr": "sum(container_memory_cache{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}) by (name)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -363,7 +363,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:606",
+          "\$\$hashKey": "object:606",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -372,7 +372,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
           "show": true
         },
         {
-          "$$hashKey": "object:607",
+          "\$\$hashKey": "object:607",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -453,7 +453,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$host\",name=~\"$container\",name=~\".+\"}[5m])) by (name)",
+          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}[5m])) by (name)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -480,7 +480,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:674",
+          "\$\$hashKey": "object:674",
           "format": "Bps",
           "label": null,
           "logBase": 1,
@@ -489,7 +489,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
           "show": true
         },
         {
-          "$$hashKey": "object:675",
+          "\$\$hashKey": "object:675",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -553,7 +553,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_network_transmit_bytes_total{instance=~\"$host\",name=~\"$container\",name=~\".+\"}[5m])) by (name)",
+          "expr": "sum(rate(container_network_transmit_bytes_total{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}[5m])) by (name)",
           "interval": "",
           "legendFormat": "{{name}}",
           "refId": "A"
@@ -579,7 +579,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:832",
+          "\$\$hashKey": "object:832",
           "format": "Bps",
           "label": null,
           "logBase": 1,
@@ -588,7 +588,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
           "show": true
         },
         {
-          "$$hashKey": "object:833",
+          "\$\$hashKey": "object:833",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -695,7 +695,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       "pluginVersion": "7.4.5",
       "targets": [
         {
-          "expr": "(time() - container_start_time_seconds{instance=~\"$host\",name=~\"$container\",name=~\".+\"})/86400",
+          "expr": "(time() - container_start_time_seconds{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"})/86400",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -782,7 +782,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
         "allValue": ".*",
         "current": {},
         "datasource": "Prometheus",
-        "definition": "label_values({__name__=~\"container.*\", instance=~\"$host\"},name)",
+        "definition": "label_values({__name__=~\"container.*\", instance=~\"\$host\"},name)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -792,7 +792,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
         "name": "container",
         "options": [],
         "query": {
-          "query": "label_values({__name__=~\"container.*\", instance=~\"$host\"},name)",
+          "query": "label_values({__name__=~\"container.*\", instance=~\"\$host\"},name)",
           "refId": "Prometheus-container-Variable-Query"
         },
         "refresh": 1,
