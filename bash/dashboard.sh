@@ -110,7 +110,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
             "type": "prometheus",
             "uid": "hbs8o4q7z"
           },
-          "expr": "sum(rate(container_cpu_usage_seconds_total{instance=~\"$host\",name=~\"$container\",name=~\".+\"}[5m])) by (name) *100",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}[5m])) by (name) *100",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -133,13 +133,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:606",
+          "\$\$hashKey": "object:606",
           "format": "percent",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:607",
+          "\$\$hashKey": "object:607",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -226,7 +226,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
             "type": "prometheus",
             "uid": "hbs8o4q7z"
           },
-          "expr": "sum(container_memory_rss{instance=~\"$host\",name=~\"$container\",name=~\".+\"}) by (name)",
+          "expr": "sum(container_memory_rss{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}) by (name)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -249,13 +249,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:606",
+          "\$\$hashKey": "object:606",
           "format": "bytes",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:607",
+          "\$\$hashKey": "object:607",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -316,7 +316,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
             "type": "prometheus",
             "uid": "hbs8o4q7z"
           },
-          "expr": "sum(container_memory_cache{instance=~\"$host\",name=~\"$container\",name=~\".+\"}) by (name)",
+          "expr": "sum(container_memory_cache{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}) by (name)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -339,13 +339,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:606",
+          "\$\$hashKey": "object:606",
           "format": "bytes",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:607",
+          "\$\$hashKey": "object:607",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -434,7 +434,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
             "type": "prometheus",
             "uid": "hbs8o4q7z"
           },
-          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$host\",name=~\"$container\",name=~\".+\"}[5m])) by (name)",
+          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}[5m])) by (name)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -457,13 +457,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:674",
+          "\$\$hashKey": "object:674",
           "format": "Bps",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:675",
+          "\$\$hashKey": "object:675",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -524,7 +524,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
             "type": "prometheus",
             "uid": "hbs8o4q7z"
           },
-          "expr": "sum(rate(container_network_transmit_bytes_total{instance=~\"$host\",name=~\"$container\",name=~\".+\"}[5m])) by (name)",
+          "expr": "sum(rate(container_network_transmit_bytes_total{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"}[5m])) by (name)",
           "interval": "",
           "legendFormat": "{{name}}",
           "refId": "A"
@@ -546,13 +546,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
       },
       "yaxes": [
         {
-          "$$hashKey": "object:832",
+          "\$\$hashKey": "object:832",
           "format": "Bps",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:833",
+          "\$\$hashKey": "object:833",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -682,7 +682,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
             "type": "prometheus",
             "uid": "hbs8o4q7z"
           },
-          "expr": "(time() - container_start_time_seconds{instance=~\"$host\",name=~\"$container\",name=~\".+\"})/86400",
+          "expr": "(time() - container_start_time_seconds{instance=~\"\$host\",name=~\"\$container\",name=~\".+\"})/86400",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -741,7 +741,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
         "current": {
           "selected": false,
           "text": "All",
-          "value": "$__all"
+          "value": "\$__all"
         },
         "datasource": {
           "type": "prometheus",
@@ -772,13 +772,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
         "current": {
           "selected": false,
           "text": "All",
-          "value": "$__all"
+          "value": "\$__all"
         },
         "datasource": {
           "type": "prometheus",
           "uid": "hbs8o4q7z"
         },
-        "definition": "label_values({__name__=~\"container.*\", instance=~\"$host\"},name)",
+        "definition": "label_values({__name__=~\"container.*\", instance=~\"\$host\"},name)",
         "hide": 0,
         "includeAll": true,
         "label": "Container",
@@ -786,7 +786,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_cadv
         "name": "container",
         "options": [],
         "query": {
-          "query": "label_values({__name__=~\"container.*\", instance=~\"$host\"},name)",
+          "query": "label_values({__name__=~\"container.*\", instance=~\"\$host\"},name)",
           "refId": "Prometheus-container-Variable-Query"
         },
         "refresh": 1,
@@ -818,7 +818,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:1058",
+        "\$\$hashKey": "object:1058",
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
@@ -1077,7 +1077,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "(((count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "expr": "(((count(count(node_cpu_seconds_total{instance=\"\$node\",job=\"\$job\"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{instance=\"\$node\",job=\"\$job\"}) by (cpu))",
           "hide": false,
           "intervalFactor": 1,
           "legendFormat": "",
@@ -1156,7 +1156,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "avg(node_load5{instance=\"$node\",job=\"$job\"}) /  count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)) * 100",
+          "expr": "avg(node_load5{instance=\"\$node\",job=\"\$job\"}) /  count(count(node_cpu_seconds_total{instance=\"\$node\",job=\"\$job\"}) by (cpu)) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1235,7 +1235,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "avg(node_load15{instance=\"$node\",job=\"$job\"}) /  count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)) * 100",
+          "expr": "avg(node_load15{instance=\"\$node\",job=\"\$job\"}) /  count(count(node_cpu_seconds_total{instance=\"\$node\",job=\"\$job\"}) by (cpu)) * 100",
           "hide": false,
           "intervalFactor": 1,
           "refId": "A",
@@ -1305,7 +1305,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "((node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} )) * 100",
+          "expr": "((node_memory_MemTotal_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_MemFree_bytes{instance=\"\$node\",job=\"\$job\"}) / (node_memory_MemTotal_bytes{instance=\"\$node\",job=\"\$job\"} )) * 100",
           "format": "time_series",
           "hide": true,
           "intervalFactor": 1,
@@ -1313,7 +1313,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "100 - ((node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "100 - ((node_memory_MemAvailable_bytes{instance=\"\$node\",job=\"\$job\"} * 100) / node_memory_MemTotal_bytes{instance=\"\$node\",job=\"\$job\"})",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1392,7 +1392,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "((node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} )) * 100",
+          "expr": "((node_memory_SwapTotal_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_SwapFree_bytes{instance=\"\$node\",job=\"\$job\"}) / (node_memory_SwapTotal_bytes{instance=\"\$node\",job=\"\$job\"} )) * 100",
           "intervalFactor": 1,
           "refId": "A",
           "step": 240
@@ -1469,7 +1469,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"\$node\",job=\"\$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"\$node\",job=\"\$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A",
@@ -1544,7 +1544,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "expr": "count(count(node_cpu_seconds_total{instance=\"\$node\",job=\"\$job\"}) by (cpu))",
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -1622,7 +1622,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_time_seconds{instance=\"\$node\",job=\"\$job\"} - node_boot_time_seconds{instance=\"\$node\",job=\"\$job\"}",
           "intervalFactor": 1,
           "refId": "A",
           "step": 240
@@ -1701,7 +1701,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "pluginVersion": "9.1.0",
       "targets": [
         {
-          "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
+          "expr": "node_filesystem_size_bytes{instance=\"\$node\",job=\"\$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1823,7 +1823,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1832,7 +1832,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1841,7 +1841,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy Iowait",
@@ -1849,7 +1849,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy IRQs",
@@ -1857,7 +1857,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy Other",
@@ -1865,7 +1865,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Idle",
@@ -1889,7 +1889,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       },
       "yaxes": [
         {
-          "$$hashKey": "object:123",
+          "\$\$hashKey": "object:123",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -1898,7 +1898,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "show": true
         },
         {
-          "$$hashKey": "object:124",
+          "\$\$hashKey": "object:124",
           "format": "short",
           "logBase": 1,
           "show": false
@@ -2007,7 +2007,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemTotal_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2016,7 +2016,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"} - (node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"} + node_memory_SReclaimable_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "node_memory_MemTotal_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_MemFree_bytes{instance=\"\$node\",job=\"\$job\"} - (node_memory_Cached_bytes{instance=\"\$node\",job=\"\$job\"} + node_memory_Buffers_bytes{instance=\"\$node\",job=\"\$job\"} + node_memory_SReclaimable_bytes{instance=\"\$node\",job=\"\$job\"})",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2025,7 +2025,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"} + node_memory_SReclaimable_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_Cached_bytes{instance=\"\$node\",job=\"\$job\"} + node_memory_Buffers_bytes{instance=\"\$node\",job=\"\$job\"} + node_memory_SReclaimable_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "RAM Cache + Buffer",
@@ -2033,7 +2033,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemFree_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "RAM Free",
@@ -2041,7 +2041,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "(node_memory_SwapTotal_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_SwapFree_bytes{instance=\"\$node\",job=\"\$job\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "SWAP Used",
@@ -2169,7 +2169,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_receive_bytes_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])*8",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "recv {{device}}",
@@ -2177,7 +2177,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_transmit_bytes_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])*8",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "trans {{device}} ",
@@ -2276,7 +2276,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'})",
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{mountpoint}}",
@@ -2402,7 +2402,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -2411,7 +2411,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='user',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='user',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "User - Normal processes executing in user mode",
@@ -2419,7 +2419,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='nice',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='nice',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Nice - Niced processes executing in user mode",
@@ -2427,7 +2427,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Idle - Waiting for something to happen",
@@ -2435,7 +2435,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='iowait',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='iowait',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Iowait - Waiting for I/O to complete",
@@ -2443,7 +2443,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='irq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='irq',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Irq - Servicing interrupts",
@@ -2451,7 +2451,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='softirq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='softirq',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Softirq - Servicing softirqs",
@@ -2459,7 +2459,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='steal',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='steal',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
@@ -2467,7 +2467,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='guest',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='guest',instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])) * 100",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
@@ -2591,7 +2591,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"} - node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"} - node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"} - node_memory_Slab_bytes{instance=\"$node\",job=\"$job\"} - node_memory_PageTables_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapCached_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemTotal_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_MemFree_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_Buffers_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_Cached_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_Slab_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_PageTables_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_SwapCached_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2600,7 +2600,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_PageTables_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_PageTables_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2609,7 +2609,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_SwapCached_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_SwapCached_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified",
@@ -2617,7 +2617,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_Slab_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_Slab_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2626,7 +2626,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_Cached_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2635,7 +2635,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_Buffers_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2644,7 +2644,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemFree_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2653,7 +2653,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "(node_memory_SwapTotal_bytes{instance=\"\$node\",job=\"\$job\"} - node_memory_SwapFree_bytes{instance=\"\$node\",job=\"\$job\"})",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2662,7 +2662,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "node_memory_HardwareCorrupted_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_HardwareCorrupted_bytes{instance=\"\$node\",job=\"\$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2758,7 +2758,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:5871",
+          "\$\$hashKey": "object:5871",
           "alias": "/.*Trans.*/",
           "transform": "negative-Y"
         }
@@ -2768,7 +2768,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_receive_bytes_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])*8",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{device}} - Receive",
@@ -2776,7 +2776,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_transmit_bytes_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])*8",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{device}} - Transmit",
@@ -2800,14 +2800,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       },
       "yaxes": [
         {
-          "$$hashKey": "object:5884",
+          "\$\$hashKey": "object:5884",
           "format": "bps",
           "label": "bits out (-) / in (+)",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:5885",
+          "\$\$hashKey": "object:5885",
           "format": "short",
           "logBase": 1,
           "show": false
@@ -2877,7 +2877,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+          "expr": "node_filesystem_size_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{mountpoint}}",
@@ -3063,14 +3063,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+          "expr": "rate(node_disk_reads_completed_total{instance=\"\$node\",job=\"\$job\",device=~\"\$diskdevices\"}[\$__rate_interval])",
           "intervalFactor": 4,
           "legendFormat": "{{device}} - Reads completed",
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+          "expr": "rate(node_disk_writes_completed_total{instance=\"\$node\",job=\"\$job\",device=~\"\$diskdevices\"}[\$__rate_interval])",
           "intervalFactor": 1,
           "legendFormat": "{{device}} - Writes completed",
           "refId": "B",
@@ -3192,7 +3192,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+          "expr": "rate(node_disk_read_bytes_total{instance=\"\$node\",job=\"\$job\",device=~\"\$diskdevices\"}[\$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -3201,7 +3201,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "step": 240
         },
         {
-          "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+          "expr": "rate(node_disk_written_bytes_total{instance=\"\$node\",job=\"\$job\",device=~\"\$diskdevices\"}[\$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -3226,14 +3226,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       },
       "yaxes": [
         {
-          "$$hashKey": "object:965",
+          "\$\$hashKey": "object:965",
           "format": "Bps",
           "label": "bytes read (-) / write (+)",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:966",
+          "\$\$hashKey": "object:966",
           "format": "ms",
           "label": "",
           "logBase": 1,
@@ -3303,7 +3303,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"} [$__rate_interval])",
+          "expr": "rate(node_disk_io_time_seconds_total{instance=\"\$node\",job=\"\$job\",device=~\"\$diskdevices\"} [\$__rate_interval])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -3329,7 +3329,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1041",
+          "\$\$hashKey": "object:1041",
           "format": "percentunit",
           "label": "%util",
           "logBase": 1,
@@ -3337,7 +3337,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "show": true
         },
         {
-          "$$hashKey": "object:1042",
+          "\$\$hashKey": "object:1042",
           "format": "s",
           "label": "",
           "logBase": 1,
@@ -3430,7 +3430,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Inactive_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Inactive_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
@@ -3438,7 +3438,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Active_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Active_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
@@ -3555,7 +3555,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Committed_AS_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Committed_AS_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Committed_AS - Amount of memory presently allocated on the system",
@@ -3563,7 +3563,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_CommitLimit_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_CommitLimit_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "CommitLimit - Amount of  memory currently available to be allocated on the system",
@@ -3671,7 +3671,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Inactive_file_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Inactive_file_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -3680,7 +3680,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Inactive_anon_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Inactive_anon_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -3689,7 +3689,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Active_file_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Active_file_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -3698,7 +3698,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Active_anon_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Active_anon_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -3808,7 +3808,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Writeback_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Writeback_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Writeback - Memory which is actively being written back to disk",
@@ -3816,7 +3816,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_WritebackTmp_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_WritebackTmp_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
@@ -3824,7 +3824,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Dirty_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Dirty_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
@@ -3928,12 +3928,12 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:4131",
+              "\$\$hashKey": "object:4131",
               "alias": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages",
               "fill": 0
             },
             {
-              "$$hashKey": "object:4138",
+              "\$\$hashKey": "object:4138",
               "alias": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages",
               "fill": 0
             }
@@ -3943,7 +3943,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Mapped_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Mapped_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Mapped - Used memory in mapped pages files which have been mmaped, such as libraries",
@@ -3951,7 +3951,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Shmem_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Shmem_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Shmem - Used shared memory (shared between several processes, thus including RAM disks)",
@@ -3959,7 +3959,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_ShmemHugePages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_ShmemHugePages_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -3968,7 +3968,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_ShmemPmdMapped_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_ShmemPmdMapped_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -3993,7 +3993,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:4106",
+              "\$\$hashKey": "object:4106",
               "format": "bytes",
               "label": "bytes",
               "logBase": 1,
@@ -4001,7 +4001,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:4107",
+              "\$\$hashKey": "object:4107",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -4080,7 +4080,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_SUnreclaim_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SUnreclaim_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
@@ -4088,7 +4088,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_SReclaimable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SReclaimable_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
@@ -4196,7 +4196,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_VmallocChunk_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_VmallocChunk_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -4205,7 +4205,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_VmallocTotal_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_VmallocTotal_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -4214,7 +4214,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_VmallocUsed_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_VmallocUsed_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -4323,7 +4323,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Bounce_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Bounce_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Bounce - Memory used for block device bounce buffers",
@@ -4436,7 +4436,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_AnonHugePages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonHugePages_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "AnonHugePages - Memory in anonymous huge pages",
@@ -4444,7 +4444,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_AnonPages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonPages_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "AnonPages - Memory in user pages not backed by files",
@@ -4552,7 +4552,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_KernelStack_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_KernelStack_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "KernelStack - Kernel memory stack. This is not reclaimable",
@@ -4560,7 +4560,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Percpu_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Percpu_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -4669,7 +4669,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_HugePages_Free{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Free{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "HugePages_Free - Huge pages in the pool that are not yet allocated",
@@ -4677,7 +4677,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_HugePages_Rsvd{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Rsvd{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "HugePages_Rsvd - Huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made",
@@ -4685,7 +4685,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_HugePages_Surp{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Surp{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "HugePages_Surp - Huge pages in the pool above the value in /proc/sys/vm/nr_hugepages",
@@ -4794,7 +4794,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_HugePages_Total{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Total{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "HugePages - Total size of the pool of huge pages",
@@ -4802,7 +4802,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Hugepagesize_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Hugepagesize_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Hugepagesize - Huge Page size",
@@ -4913,7 +4913,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_DirectMap1G_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_DirectMap1G_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
@@ -4921,7 +4921,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_DirectMap2M_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_DirectMap2M_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -4930,7 +4930,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_DirectMap4k_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_DirectMap4k_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -5039,7 +5039,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Unevictable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Unevictable_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Unevictable - Amount of unevictable memory that can't be swapped out for a variety of reasons",
@@ -5047,7 +5047,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_memory_Mlocked_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Mlocked_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "MLocked - Size of pages locked to memory using the mlock() system call",
@@ -5156,7 +5156,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_NFS_Unstable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_NFS_Unstable_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
@@ -5267,7 +5267,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pgpgin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgpgin{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pagesin - Page in operations",
@@ -5275,7 +5275,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pgpgout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgpgout{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pagesout - Page out operations",
@@ -5367,7 +5367,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pswpin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pswpin{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pswpin - Pages swapped in",
@@ -5375,7 +5375,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pswpout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pswpout{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pswpout - Pages swapped out",
@@ -5478,7 +5478,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:6118",
+              "\$\$hashKey": "object:6118",
               "alias": "Pgfault - Page major and minor fault operations",
               "fill": 0,
               "stack": false
@@ -5489,7 +5489,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgfault{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pgfault - Page major and minor fault operations",
@@ -5497,7 +5497,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgmajfault{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pgmajfault - Major page fault operations",
@@ -5505,7 +5505,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])  - rate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgfault{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])  - rate(node_vmstat_pgmajfault{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pgminfault - Minor page fault operations",
@@ -5529,7 +5529,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6133",
+              "\$\$hashKey": "object:6133",
               "format": "short",
               "label": "faults",
               "logBase": 1,
@@ -5537,7 +5537,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6134",
+              "\$\$hashKey": "object:6134",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -5616,7 +5616,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_oom_kill{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_oom_kill{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -5641,7 +5641,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:5373",
+              "\$\$hashKey": "object:5373",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -5649,7 +5649,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:5374",
+              "\$\$hashKey": "object:5374",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -5729,7 +5729,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_estimated_error_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_estimated_error_seconds{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -5739,7 +5739,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_timex_offset_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_offset_seconds{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -5749,7 +5749,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_timex_maxerror_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_maxerror_seconds{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -5838,7 +5838,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_loop_time_constant{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_loop_time_constant{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -5930,7 +5930,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_sync_status{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_sync_status{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -5939,7 +5939,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_timex_frequency_adjustment_ratio{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_frequency_adjustment_ratio{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6026,7 +6026,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_tick_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_tick_seconds{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6035,7 +6035,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_timex_tai_offset_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_tai_offset_seconds{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6140,7 +6140,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_procs_blocked{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_procs_blocked{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Processes blocked waiting for I/O to complete",
@@ -6148,7 +6148,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_procs_running{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_procs_running{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Processes in runnable state",
@@ -6172,7 +6172,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6500",
+              "\$\$hashKey": "object:6500",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -6180,7 +6180,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6501",
+              "\$\$hashKey": "object:6501",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -6237,7 +6237,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_processes_state{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_state{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6262,7 +6262,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6500",
+              "\$\$hashKey": "object:6500",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -6270,7 +6270,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6501",
+              "\$\$hashKey": "object:6501",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -6327,7 +6327,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_forks_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -6352,7 +6352,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6640",
+              "\$\$hashKey": "object:6640",
               "format": "short",
               "label": "forks / sec",
               "logBase": 1,
@@ -6360,7 +6360,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6641",
+              "\$\$hashKey": "object:6641",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -6421,7 +6421,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_virtual_memory_bytes{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -6430,7 +6430,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "process_resident_memory_max_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "process_resident_memory_max_bytes{instance=\"\$node\",job=\"\$job\"}",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -6439,7 +6439,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_virtual_memory_bytes{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -6448,7 +6448,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(process_virtual_memory_max_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_virtual_memory_max_bytes{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -6532,7 +6532,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:709",
+              "\$\$hashKey": "object:709",
               "alias": "PIDs limit",
               "color": "#F2495C",
               "fill": 0
@@ -6543,7 +6543,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_processes_pids{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_pids{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6552,7 +6552,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_processes_max_processes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_max_processes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6577,7 +6577,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6500",
+              "\$\$hashKey": "object:6500",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -6585,7 +6585,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6501",
+              "\$\$hashKey": "object:6501",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -6638,7 +6638,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:4963",
+              "\$\$hashKey": "object:4963",
               "alias": "/.*waiting.*/",
               "transform": "negative-Y"
             }
@@ -6648,7 +6648,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_schedstat_running_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6657,7 +6657,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6682,14 +6682,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:4860",
+              "\$\$hashKey": "object:4860",
               "format": "s",
               "label": "seconds",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:4861",
+              "\$\$hashKey": "object:4861",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -6742,7 +6742,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:709",
+              "\$\$hashKey": "object:709",
               "alias": "Threads limit",
               "color": "#F2495C",
               "fill": 0
@@ -6753,7 +6753,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_processes_threads{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_threads{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6762,7 +6762,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_processes_max_threads{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_max_threads{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -6787,7 +6787,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6500",
+              "\$\$hashKey": "object:6500",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -6795,7 +6795,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6501",
+              "\$\$hashKey": "object:6501",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -6870,7 +6870,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_context_switches_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Context switches",
@@ -6878,7 +6878,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_intr_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_intr_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -6966,7 +6966,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_load1{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "Load 1m",
@@ -6974,7 +6974,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_load5{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_load5{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "Load 5m",
@@ -6982,7 +6982,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_load15{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_load15{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "Load 15m",
@@ -7006,7 +7006,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6261",
+              "\$\$hashKey": "object:6261",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -7014,7 +7014,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6262",
+              "\$\$hashKey": "object:6262",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7081,7 +7081,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_interrupts_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -7169,7 +7169,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_schedstat_timeslices_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_schedstat_timeslices_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -7194,14 +7194,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:4860",
+              "\$\$hashKey": "object:4860",
               "format": "short",
               "label": "counter",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:4861",
+              "\$\$hashKey": "object:4861",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7258,7 +7258,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_entropy_available_bits{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_entropy_available_bits{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Entropy available to random number generators",
@@ -7282,7 +7282,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6568",
+              "\$\$hashKey": "object:6568",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -7290,7 +7290,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6569",
+              "\$\$hashKey": "object:6569",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7347,7 +7347,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(process_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_cpu_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -7372,14 +7372,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:4860",
+              "\$\$hashKey": "object:4860",
               "format": "s",
               "label": "seconds",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:4861",
+              "\$\$hashKey": "object:4861",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7431,7 +7431,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:6323",
+              "\$\$hashKey": "object:6323",
               "alias": "/.*Max*./",
               "color": "#890F02",
               "fill": 0
@@ -7442,7 +7442,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "process_max_fds{instance=\"$node\",job=\"$job\"}",
+              "expr": "process_max_fds{instance=\"\$node\",job=\"\$job\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "Maximum open file descriptors",
@@ -7450,7 +7450,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "process_open_fds{instance=\"$node\",job=\"$job\"}",
+              "expr": "process_open_fds{instance=\"\$node\",job=\"\$job\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "Open file descriptors",
@@ -7474,7 +7474,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6338",
+              "\$\$hashKey": "object:6338",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -7482,7 +7482,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6339",
+              "\$\$hashKey": "object:6339",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7552,13 +7552,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:6726",
+              "\$\$hashKey": "object:6726",
               "alias": "/.*Critical*./",
               "color": "#E24D42",
               "fill": 0
             },
             {
-              "$$hashKey": "object:6727",
+              "\$\$hashKey": "object:6727",
               "alias": "/.*Max*./",
               "color": "#EF843C",
               "fill": 0
@@ -7569,7 +7569,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_hwmon_temp_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_celsius{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -7578,7 +7578,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_crit_alarm_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_alarm_celsius{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
@@ -7588,7 +7588,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_crit_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_celsius{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -7597,7 +7597,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_crit_hyst_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_hyst_celsius{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
@@ -7607,7 +7607,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_max_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_max_celsius{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
@@ -7633,7 +7633,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:6750",
+              "\$\$hashKey": "object:6750",
               "format": "celsius",
               "label": "temperature",
               "logBase": 1,
@@ -7641,7 +7641,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:6751",
+              "\$\$hashKey": "object:6751",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7693,7 +7693,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:1655",
+              "\$\$hashKey": "object:1655",
               "alias": "/.*Max*./",
               "color": "#EF843C",
               "fill": 0
@@ -7704,7 +7704,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_cooling_device_cur_state{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_cooling_device_cur_state{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -7714,7 +7714,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_cooling_device_max_state{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_cooling_device_max_state{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -7739,14 +7739,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1678",
+              "\$\$hashKey": "object:1678",
               "format": "short",
               "label": "counter",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:1679",
+              "\$\$hashKey": "object:1679",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7802,7 +7802,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_power_supply_online{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_power_supply_online{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -7828,14 +7828,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1678",
+              "\$\$hashKey": "object:1678",
               "format": "short",
               "label": "counter",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:1679",
+              "\$\$hashKey": "object:1679",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -7909,7 +7909,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_systemd_socket_accepted_connections_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_systemd_socket_accepted_connections_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -8017,7 +8017,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"activating\"}",
+              "expr": "node_systemd_units{instance=\"\$node\",job=\"\$job\",state=\"activating\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -8026,7 +8026,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"active\"}",
+              "expr": "node_systemd_units{instance=\"\$node\",job=\"\$job\",state=\"active\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -8035,7 +8035,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"deactivating\"}",
+              "expr": "node_systemd_units{instance=\"\$node\",job=\"\$job\",state=\"deactivating\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -8044,7 +8044,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"failed\"}",
+              "expr": "node_systemd_units{instance=\"\$node\",job=\"\$job\",state=\"failed\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -8053,7 +8053,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"inactive\"}",
+              "expr": "node_systemd_units{instance=\"\$node\",job=\"\$job\",state=\"inactive\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -8165,107 +8165,107 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:2033",
+              "\$\$hashKey": "object:2033",
               "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
-              "$$hashKey": "object:2034",
+              "\$\$hashKey": "object:2034",
               "alias": "/.*sda_.*/",
               "color": "#7EB26D"
             },
             {
-              "$$hashKey": "object:2035",
+              "\$\$hashKey": "object:2035",
               "alias": "/.*sdb_.*/",
               "color": "#EAB839"
             },
             {
-              "$$hashKey": "object:2036",
+              "\$\$hashKey": "object:2036",
               "alias": "/.*sdc_.*/",
               "color": "#6ED0E0"
             },
             {
-              "$$hashKey": "object:2037",
+              "\$\$hashKey": "object:2037",
               "alias": "/.*sdd_.*/",
               "color": "#EF843C"
             },
             {
-              "$$hashKey": "object:2038",
+              "\$\$hashKey": "object:2038",
               "alias": "/.*sde_.*/",
               "color": "#E24D42"
             },
             {
-              "$$hashKey": "object:2039",
+              "\$\$hashKey": "object:2039",
               "alias": "/.*sda1.*/",
               "color": "#584477"
             },
             {
-              "$$hashKey": "object:2040",
+              "\$\$hashKey": "object:2040",
               "alias": "/.*sda2_.*/",
               "color": "#BA43A9"
             },
             {
-              "$$hashKey": "object:2041",
+              "\$\$hashKey": "object:2041",
               "alias": "/.*sda3_.*/",
               "color": "#F4D598"
             },
             {
-              "$$hashKey": "object:2042",
+              "\$\$hashKey": "object:2042",
               "alias": "/.*sdb1.*/",
               "color": "#0A50A1"
             },
             {
-              "$$hashKey": "object:2043",
+              "\$\$hashKey": "object:2043",
               "alias": "/.*sdb2.*/",
               "color": "#BF1B00"
             },
             {
-              "$$hashKey": "object:2044",
+              "\$\$hashKey": "object:2044",
               "alias": "/.*sdb3.*/",
               "color": "#E0752D"
             },
             {
-              "$$hashKey": "object:2045",
+              "\$\$hashKey": "object:2045",
               "alias": "/.*sdc1.*/",
               "color": "#962D82"
             },
             {
-              "$$hashKey": "object:2046",
+              "\$\$hashKey": "object:2046",
               "alias": "/.*sdc2.*/",
               "color": "#614D93"
             },
             {
-              "$$hashKey": "object:2047",
+              "\$\$hashKey": "object:2047",
               "alias": "/.*sdc3.*/",
               "color": "#9AC48A"
             },
             {
-              "$$hashKey": "object:2048",
+              "\$\$hashKey": "object:2048",
               "alias": "/.*sdd1.*/",
               "color": "#65C5DB"
             },
             {
-              "$$hashKey": "object:2049",
+              "\$\$hashKey": "object:2049",
               "alias": "/.*sdd2.*/",
               "color": "#F9934E"
             },
             {
-              "$$hashKey": "object:2050",
+              "\$\$hashKey": "object:2050",
               "alias": "/.*sdd3.*/",
               "color": "#EA6460"
             },
             {
-              "$$hashKey": "object:2051",
+              "\$\$hashKey": "object:2051",
               "alias": "/.*sde1.*/",
               "color": "#E0F9D7"
             },
             {
-              "$$hashKey": "object:2052",
+              "\$\$hashKey": "object:2052",
               "alias": "/.*sdd2.*/",
               "color": "#FCEACA"
             },
             {
-              "$$hashKey": "object:2053",
+              "\$\$hashKey": "object:2053",
               "alias": "/.*sde3.*/",
               "color": "#F9E2D2"
             }
@@ -8275,14 +8275,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_reads_completed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_writes_completed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
@@ -8305,14 +8305,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:2186",
+              "\$\$hashKey": "object:2186",
               "format": "iops",
               "label": "IO read (-) / write (+)",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:2187",
+              "\$\$hashKey": "object:2187",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -8465,7 +8465,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_read_bytes_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Read bytes",
@@ -8473,7 +8473,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_written_bytes_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Written bytes",
@@ -8497,14 +8497,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:369",
+              "\$\$hashKey": "object:369",
               "format": "Bps",
               "label": "bytes read (-) / write (+)",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:370",
+              "\$\$hashKey": "object:370",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -8659,7 +8659,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_read_time_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval]) / rate(node_disk_reads_completed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 4,
@@ -8668,7 +8668,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_write_time_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval]) / rate(node_disk_writes_completed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -8693,14 +8693,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:441",
+              "\$\$hashKey": "object:441",
               "format": "s",
               "label": "time. read (-) / write (+)",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:442",
+              "\$\$hashKey": "object:442",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -8851,7 +8851,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_time_weighted_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_io_time_weighted_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}}",
@@ -8875,7 +8875,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:513",
+              "\$\$hashKey": "object:513",
               "format": "none",
               "label": "aqu-sz",
               "logBase": 1,
@@ -8883,7 +8883,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:514",
+              "\$\$hashKey": "object:514",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9038,14 +9038,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_reads_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_reads_merged_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Read merged",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_writes_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_writes_merged_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Write merged",
               "refId": "B",
@@ -9068,14 +9068,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:585",
+              "\$\$hashKey": "object:585",
               "format": "iops",
               "label": "I/Os",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:586",
+              "\$\$hashKey": "object:586",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9226,7 +9226,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_io_time_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO",
@@ -9234,7 +9234,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_discard_time_seconds_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - discard",
@@ -9258,7 +9258,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:657",
+              "\$\$hashKey": "object:657",
               "format": "percentunit",
               "label": "%util",
               "logBase": 1,
@@ -9266,7 +9266,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:658",
+              "\$\$hashKey": "object:658",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9417,7 +9417,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_disk_io_now{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_disk_io_now{instance=\"\$node\",job=\"\$job\"}",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
@@ -9441,7 +9441,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:729",
+              "\$\$hashKey": "object:729",
               "format": "none",
               "label": "Outstanding req.",
               "logBase": 1,
@@ -9449,7 +9449,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:730",
+              "\$\$hashKey": "object:730",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9513,102 +9513,102 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:2034",
+              "\$\$hashKey": "object:2034",
               "alias": "/.*sda_.*/",
               "color": "#7EB26D"
             },
             {
-              "$$hashKey": "object:2035",
+              "\$\$hashKey": "object:2035",
               "alias": "/.*sdb_.*/",
               "color": "#EAB839"
             },
             {
-              "$$hashKey": "object:2036",
+              "\$\$hashKey": "object:2036",
               "alias": "/.*sdc_.*/",
               "color": "#6ED0E0"
             },
             {
-              "$$hashKey": "object:2037",
+              "\$\$hashKey": "object:2037",
               "alias": "/.*sdd_.*/",
               "color": "#EF843C"
             },
             {
-              "$$hashKey": "object:2038",
+              "\$\$hashKey": "object:2038",
               "alias": "/.*sde_.*/",
               "color": "#E24D42"
             },
             {
-              "$$hashKey": "object:2039",
+              "\$\$hashKey": "object:2039",
               "alias": "/.*sda1.*/",
               "color": "#584477"
             },
             {
-              "$$hashKey": "object:2040",
+              "\$\$hashKey": "object:2040",
               "alias": "/.*sda2_.*/",
               "color": "#BA43A9"
             },
             {
-              "$$hashKey": "object:2041",
+              "\$\$hashKey": "object:2041",
               "alias": "/.*sda3_.*/",
               "color": "#F4D598"
             },
             {
-              "$$hashKey": "object:2042",
+              "\$\$hashKey": "object:2042",
               "alias": "/.*sdb1.*/",
               "color": "#0A50A1"
             },
             {
-              "$$hashKey": "object:2043",
+              "\$\$hashKey": "object:2043",
               "alias": "/.*sdb2.*/",
               "color": "#BF1B00"
             },
             {
-              "$$hashKey": "object:2044",
+              "\$\$hashKey": "object:2044",
               "alias": "/.*sdb3.*/",
               "color": "#E0752D"
             },
             {
-              "$$hashKey": "object:2045",
+              "\$\$hashKey": "object:2045",
               "alias": "/.*sdc1.*/",
               "color": "#962D82"
             },
             {
-              "$$hashKey": "object:2046",
+              "\$\$hashKey": "object:2046",
               "alias": "/.*sdc2.*/",
               "color": "#614D93"
             },
             {
-              "$$hashKey": "object:2047",
+              "\$\$hashKey": "object:2047",
               "alias": "/.*sdc3.*/",
               "color": "#9AC48A"
             },
             {
-              "$$hashKey": "object:2048",
+              "\$\$hashKey": "object:2048",
               "alias": "/.*sdd1.*/",
               "color": "#65C5DB"
             },
             {
-              "$$hashKey": "object:2049",
+              "\$\$hashKey": "object:2049",
               "alias": "/.*sdd2.*/",
               "color": "#F9934E"
             },
             {
-              "$$hashKey": "object:2050",
+              "\$\$hashKey": "object:2050",
               "alias": "/.*sdd3.*/",
               "color": "#EA6460"
             },
             {
-              "$$hashKey": "object:2051",
+              "\$\$hashKey": "object:2051",
               "alias": "/.*sde1.*/",
               "color": "#E0F9D7"
             },
             {
-              "$$hashKey": "object:2052",
+              "\$\$hashKey": "object:2052",
               "alias": "/.*sdd2.*/",
               "color": "#FCEACA"
             },
             {
-              "$$hashKey": "object:2053",
+              "\$\$hashKey": "object:2053",
               "alias": "/.*sde3.*/",
               "color": "#F9E2D2"
             }
@@ -9618,7 +9618,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_discards_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_discards_completed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Discards completed",
@@ -9626,7 +9626,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_disk_discards_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_discards_merged_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Discards merged",
@@ -9650,14 +9650,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:2186",
+              "\$\$hashKey": "object:2186",
               "format": "iops",
               "label": "IOs",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:2187",
+              "\$\$hashKey": "object:2187",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9743,7 +9743,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_avail_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -9753,7 +9753,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_filesystem_free_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_free_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 1,
@@ -9762,7 +9762,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 1,
@@ -9787,7 +9787,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:3826",
+              "\$\$hashKey": "object:3826",
               "format": "bytes",
               "label": "bytes",
               "logBase": 1,
@@ -9795,7 +9795,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:3827",
+              "\$\$hashKey": "object:3827",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9862,7 +9862,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_files_free{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_files_free{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -9887,7 +9887,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:3894",
+              "\$\$hashKey": "object:3894",
               "format": "short",
               "label": "file nodes",
               "logBase": 1,
@@ -9895,7 +9895,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:3895",
+              "\$\$hashKey": "object:3895",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -9961,7 +9961,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filefd_maximum{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_filefd_maximum{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "Max open files",
@@ -9969,7 +9969,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_filefd_allocated{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_filefd_allocated{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Open files",
@@ -10066,7 +10066,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_files{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_files{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -10168,7 +10168,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_readonly{instance=\"\$node\",job=\"\$job\",device!~'rootfs'}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{mountpoint}} - ReadOnly",
@@ -10176,7 +10176,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\",device!~'rootfs',fstype!~'tmpfs'}",
+              "expr": "node_filesystem_device_error{instance=\"\$node\",job=\"\$job\",device!~'rootfs',fstype!~'tmpfs'}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -10201,7 +10201,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:3670",
+              "\$\$hashKey": "object:3670",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -10210,7 +10210,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:3671",
+              "\$\$hashKey": "object:3671",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -10296,7 +10296,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_packets_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -10305,7 +10305,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_packets_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -10402,7 +10402,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_errs_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive errors",
@@ -10410,7 +10410,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_errs_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Rransmit errors",
@@ -10506,7 +10506,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_drop_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive drop",
@@ -10514,7 +10514,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_drop_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit drop",
@@ -10610,7 +10610,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_compressed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive compressed",
@@ -10618,7 +10618,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_compressed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit compressed",
@@ -10714,7 +10714,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_multicast_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive multicast",
@@ -10810,7 +10810,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_fifo_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive fifo",
@@ -10818,7 +10818,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_fifo_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit fifo",
@@ -10905,7 +10905,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:576",
+              "\$\$hashKey": "object:576",
               "alias": "/.*Trans.*/",
               "transform": "negative-Y"
             }
@@ -10915,7 +10915,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_frame_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_frame_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -10940,14 +10940,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:589",
+              "\$\$hashKey": "object:589",
               "format": "pps",
               "label": "packets out (-) / in (+)",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:590",
+              "\$\$hashKey": "object:590",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -11009,7 +11009,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_transmit_carrier_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_carrier_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Statistic transmit_carrier",
@@ -11105,7 +11105,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_colls_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit colls",
@@ -11187,7 +11187,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:663",
+              "\$\$hashKey": "object:663",
               "alias": "NF conntrack limit",
               "color": "#890F02",
               "fill": 0
@@ -11198,7 +11198,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_nf_conntrack_entries{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_nf_conntrack_entries{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "NF conntrack entries",
@@ -11206,7 +11206,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_nf_conntrack_entries_limit{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_nf_conntrack_entries_limit{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "NF conntrack limit",
@@ -11230,7 +11230,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:678",
+              "\$\$hashKey": "object:678",
               "format": "short",
               "label": "entries",
               "logBase": 1,
@@ -11238,7 +11238,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:679",
+              "\$\$hashKey": "object:679",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -11295,7 +11295,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_arp_entries{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_arp_entries{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{ device }} - ARP entries",
@@ -11382,7 +11382,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_mtu_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_mtu_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{ device }} - Bytes",
@@ -11470,7 +11470,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_speed_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_speed_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{ device }} - Speed",
@@ -11558,7 +11558,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_transmit_queue_length{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_transmit_queue_length{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{ device }} -   Interface transmit queue length",
@@ -11647,7 +11647,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:232",
+              "\$\$hashKey": "object:232",
               "alias": "/.*Dropped.*/",
               "transform": "negative-Y"
             }
@@ -11657,7 +11657,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_softnet_processed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_softnet_processed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -11666,7 +11666,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_softnet_dropped_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_softnet_dropped_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -11691,14 +11691,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:207",
+              "\$\$hashKey": "object:207",
               "format": "short",
               "label": "packetes drop (-) / process (+)",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:208",
+              "\$\$hashKey": "object:208",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -11760,7 +11760,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_softnet_times_squeezed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_softnet_times_squeezed_total{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -11785,14 +11785,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:207",
+              "\$\$hashKey": "object:207",
               "format": "short",
               "label": "counter",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:208",
+              "\$\$hashKey": "object:208",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -11854,7 +11854,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_up{operstate=\"up\",instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_up{operstate=\"up\",instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{interface}} - Operational state UP",
@@ -11862,7 +11862,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_carrier{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "instant": false,
               "legendFormat": "{{device}} - Physical link state",
@@ -11976,7 +11976,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_TCP_alloc{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_alloc{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -11985,7 +11985,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_inuse{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -11994,7 +11994,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_mem{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_mem{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
@@ -12004,7 +12004,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_orphan{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_orphan{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12013,7 +12013,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_tw{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_tw{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12112,7 +12112,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_UDPLITE_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDPLITE_inuse{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12121,7 +12121,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_UDP_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDP_inuse{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12130,7 +12130,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_UDP_mem{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDP_mem{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12229,7 +12229,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_FRAG_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_FRAG_inuse{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12238,7 +12238,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_RAW_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_RAW_inuse{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12263,7 +12263,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1572",
+              "\$\$hashKey": "object:1572",
               "format": "short",
               "label": "counter",
               "logBase": 1,
@@ -12271,7 +12271,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:1573",
+              "\$\$hashKey": "object:1573",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -12339,7 +12339,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_TCP_mem_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_mem_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12348,7 +12348,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_UDP_mem_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDP_mem_bytes{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12357,7 +12357,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_sockstat_FRAG_memory{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_FRAG_memory{instance=\"\$node\",job=\"\$job\"}",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "FRAG_memory - Used memory for frag",
@@ -12454,7 +12454,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_sockets_used{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_sockets_used{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12571,7 +12571,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:1876",
+              "\$\$hashKey": "object:1876",
               "alias": "/.*Out.*/",
               "transform": "negative-Y"
             }
@@ -12581,7 +12581,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_IpExt_InOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_IpExt_InOctets{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12590,7 +12590,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_IpExt_OutOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_IpExt_OutOctets{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "OutOctets - Sent octets",
@@ -12614,14 +12614,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1889",
+              "\$\$hashKey": "object:1889",
               "format": "short",
               "label": "octects out (-) / in (+)",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:1890",
+              "\$\$hashKey": "object:1890",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -12692,7 +12692,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Ip_Forwarding{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Ip_Forwarding{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12717,7 +12717,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1957",
+              "\$\$hashKey": "object:1957",
               "format": "short",
               "label": "datagrams",
               "logBase": 1,
@@ -12725,7 +12725,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:1958",
+              "\$\$hashKey": "object:1958",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -12800,7 +12800,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Icmp_InMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Icmp_InMsgs{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12809,7 +12809,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Icmp_OutMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Icmp_OutMsgs{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12914,7 +12914,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Icmp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Icmp_InErrors{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13023,7 +13023,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Udp_InDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_InDatagrams{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13032,7 +13032,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Udp_OutDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_OutDatagrams{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13132,7 +13132,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Udp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_InErrors{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13141,7 +13141,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Udp_NoPorts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_NoPorts{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13150,13 +13150,13 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_UdpLite_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_UdpLite_InErrors{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "legendFormat": "InErrors Lite - UDPLite Datagrams that could not be delivered to an application",
               "refId": "C"
             },
             {
-              "expr": "rate(node_netstat_Udp_RcvbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_RcvbufErrors{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13165,7 +13165,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Udp_SndbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_SndbufErrors{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13190,14 +13190,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:4232",
+              "\$\$hashKey": "object:4232",
               "format": "short",
               "label": "datagrams",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:4233",
+              "\$\$hashKey": "object:4233",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -13276,7 +13276,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Tcp_InSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_InSegs{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -13286,7 +13286,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Tcp_OutSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_OutSegs{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13388,7 +13388,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_TcpExt_ListenOverflows{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_ListenOverflows{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13398,7 +13398,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_ListenDrops{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_ListenDrops{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13408,7 +13408,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_TCPSynRetrans{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_TCPSynRetrans{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13417,19 +13417,19 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Tcp_RetransSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_RetransSegs{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "legendFormat": "RetransSegs - Segments retransmitted - that is, the number of TCP segments transmitted containing one or more previously transmitted octets",
               "refId": "D"
             },
             {
-              "expr": "rate(node_netstat_Tcp_InErrs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_InErrs{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "legendFormat": "InErrs - Segments received in error (e.g., bad TCP checksums)",
               "refId": "E"
             },
             {
-              "expr": "rate(node_netstat_Tcp_OutRsts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_OutRsts{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "interval": "",
               "legendFormat": "OutRsts - Segments sent with RST flag",
               "refId": "F"
@@ -13522,7 +13522,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:454",
+              "\$\$hashKey": "object:454",
               "alias": "/.*MaxConn *./",
               "color": "#890F02",
               "fill": 0
@@ -13533,7 +13533,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_netstat_Tcp_CurrEstab{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_netstat_Tcp_CurrEstab{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13543,7 +13543,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_netstat_Tcp_MaxConn{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_netstat_Tcp_MaxConn{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13569,7 +13569,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:469",
+              "\$\$hashKey": "object:469",
               "format": "short",
               "label": "connections",
               "logBase": 1,
@@ -13577,7 +13577,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "show": true
             },
             {
-              "$$hashKey": "object:470",
+              "\$\$hashKey": "object:470",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -13654,7 +13654,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_TcpExt_SyncookiesFailed{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_SyncookiesFailed{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13664,7 +13664,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_SyncookiesRecv{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_SyncookiesRecv{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13674,7 +13674,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_SyncookiesSent{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_SyncookiesSent{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13774,7 +13774,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Tcp_ActiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_ActiveOpens{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13783,7 +13783,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Tcp_PassiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_PassiveOpens{instance=\"\$node\",job=\"\$job\"}[\$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13891,7 +13891,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_scrape_collector_duration_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_scrape_collector_duration_seconds{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13975,7 +13975,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "$$hashKey": "object:1969",
+              "\$\$hashKey": "object:1969",
               "alias": "/.*error.*/",
               "color": "#F2495C",
               "transform": "negative-Y"
@@ -13986,7 +13986,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_scrape_collector_success{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_scrape_collector_success{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -13996,7 +13996,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
               "step": 240
             },
             {
-              "expr": "node_textfile_scrape_error{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_textfile_scrape_error{instance=\"\$node\",job=\"\$job\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -14022,14 +14022,14 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1484",
+              "\$\$hashKey": "object:1484",
               "format": "short",
               "label": "counter",
               "logBase": 1,
               "show": true
             },
             {
-              "$$hashKey": "object:1485",
+              "\$\$hashKey": "object:1485",
               "format": "short",
               "logBase": 1,
               "show": false
@@ -14111,7 +14111,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
           "type": "prometheus",
           "uid": "hbs8o4q7z"
         },
-        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
+        "definition": "label_values(node_uname_info{job=\"\$job\"}, instance)",
         "hide": 0,
         "includeAll": false,
         "label": "Host:",
@@ -14119,7 +14119,7 @@ cat <<EOF > /home/"${SUDO_USER:-$USER}"/docker/grafana/dashboards/dashboard_node
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
+          "query": "label_values(node_uname_info{job=\"\$job\"}, instance)",
           "refId": "Prometheus-node-Variable-Query"
         },
         "refresh": 1,
